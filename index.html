@@ -1,0 +1,104 @@
+<html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body class="body">
+    <center>
+        <H1 class="demo1">About Me.</H1>
+    </center>
+    <hr>
+    <br>
+    <div class="row">
+        <div class="column" style="text-align:right">
+            <img src="exercise1_photo.jpg" width=430 height=570>
+        </div>
+        <div class="column" style="text-align:left; padding:50px;width:400px">
+            <b>
+                <h2 style="font-family:'Times New Roman">Paulo Diaz</h2>
+            </b>
+            <br>
+
+            <div class="demo6"></div>
+            <br>
+            <b>
+                <p style="font-family:'Courier New">
+                    "My name is Paulo and I love to learn new langauges, currently I am learning Thai and Chinese and
+                    their
+                    culture as well! Hoping to find my new sugar daddy there too!
+                    I love to learn about new cultures too, especially those in SouthEast Asia. I find the culture there
+                    really unique and although transracial isn't a thing, I don't think I am Filipino :) "
+                </p>
+                <a class="btn play">Play</a>
+                <a class="btn pause">Pause</a>
+            </b>
+        </div>
+
+
+
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+        anime({
+            targets: "about",
+            translateY: -300,
+            rotate: 180,
+            delay: anime.stagger(300, { start: 1000 }),
+            direction: 'alternate'
+        });
+        anime({
+            targets: '.demo6',
+            innerHTML: [0, 2003], //start and end values
+            easing: 'linear',
+            round: 1, //rounds off to zero decimal places 
+            duration: 2000
+        });
+        var animation = anime({
+            targets: '.body',
+            backgroundColor: '#acfcc4',
+            easing: 'easeInOutExpo',
+            direction: 'alternate',
+            duration: 1000,
+            loop: true,
+            autoplay: false,
+        });
+        anime({
+                targets: ".demo1",
+                translateX: 0,
+                translateY: 0,
+                borderRadius: 30,
+                rotate: 360,
+                opacity: [0, 1],
+                delay: 500
+        });
+
+        document.querySelector('.play').onclick = animation.play;
+        document.querySelector('.pause').onclick = animation.pause;
+
+    </script>
+
+</body>
+
+</html>
